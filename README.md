@@ -1,12 +1,5 @@
-# RLC Circuit Analyzer (Streamlit)
-
-An interactive, portfolio-ready series RLC analyzer with:
-
-- Time-domain simulation (ODE) for step/sine/square/chirp/custom inputs
-- Frequency response (Bode magnitude/phase) for V_R, V_L, V_C, or current
-- Parametric sweeps for R/L/C with multi-curve visualization
-- Clean, modern UI (dark theme, Manrope font) — no Inter
-- PDF report export with figures and metrics
+# Voltus
+Visualize RLC Circuits
 
 ## Quickstart
 
