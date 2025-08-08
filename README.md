@@ -1,39 +1,73 @@
 # Voltus
-Visualize RLC Circuits
 
-## Quickstart
+A real-time RLC circuit simulator with advanced signal analysis and visualization.
 
-1. Create a virtual environment (recommended)
+## Overview
+
+Voltus provides comprehensive analysis of series RLC circuits through time-domain simulation, frequency response analysis, and power calculations. Built as a personal exploration while studying circuits (ELG 2138) at the University of Ottawa 
+
+## Features
+
+### Core Analysis
+- **Time-domain simulation** using ODE solvers
+- **Frequency response** with Bode plots
+- **Power analysis** with energy storage calculations
+- **Filter design** for low-pass, high-pass, band-pass, and notch filters
+
+### Input Waveforms
+- Step, sinusoidal, square, triangle, sawtooth
+- Chirp signals and pulse trains
+- Custom CSV input support
+
+### Visualization
+- Interactive Plotly charts
+- Real-time parameter updates
+- Export-ready figures and reports
+
+## Installation
 
 ```bash
-python -m venv .venv
-# Windows PowerShell
-. .venv/Scripts/Activate.ps1
-```
+# Clone the repository
+git clone <repository-url>
+cd voltus
 
-2. Install dependencies
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-```bash
+# Install dependencies
 pip install -r requirements.txt
 ```
 
-3. Run the app
+## Usage
 
 ```bash
 streamlit run app.py
 ```
 
-## Custom CSV Input
-Upload a CSV with columns:
+Navigate to `http://localhost:8501` in your browser.
 
-- `t` (seconds)
-- `vin` (volts)
+## Circuit Parameters
 
-The input is piecewise-linearly interpolated and used as the source.
+- **Resistance (R)**: 1Ω - 10kΩ
+- **Inductance (L)**: 1μH - 1H  
+- **Capacitance (C)**: 1pF - 1mF
 
-## Notes
-- The circuit modeled is a series RLC. Output for Bode plots can be selected among R, L, C or current.
-- PDF export requires `kaleido` to render Plotly figures; included in requirements.
+## Custom Input
+
+Upload a CSV file with columns:
+- `t`: Time in seconds
+- `vin`: Input voltage in volts
+
+The data is interpolated and used as the circuit input.
+
+## Dependencies
+
+- **Streamlit**: Web interface
+- **NumPy/SciPy**: Numerical computation
+- **Plotly**: Interactive visualization
+- **ReportLab**: PDF generation
 
 ## License
-MIT
+
+MIT License - see LICENSE file for details.
